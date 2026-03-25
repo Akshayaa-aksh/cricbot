@@ -1,0 +1,364 @@
+{
+  "status": "success",
+  "response": {
+    "schedules": [
+      {
+        "scheduleAdWrapper": {
+          "date": "SUN, MAR 22 2026",
+          "matchScheduleList": [
+            {
+              "seriesName": "South Africa tour of New Zealand, 2026",
+              "matchInfo": [
+                {
+                  "matchId": 122720,
+                  "seriesId": 10234,
+                  "matchDesc": "4th T20I",
+                  "matchFormat": "T20",
+                  "startDate": "1774160100000",
+                  "endDate": "1774223999000",
+                  "team1": {
+                    "teamId": 13,
+                    "teamName": "New Zealand",
+                    "teamSName": "NZ",
+                    "isFullMember": true,
+                    "imageId": 776333
+                  },
+                  "team2": {
+                    "teamId": 11,
+                    "teamName": "South Africa",
+                    "teamSName": "RSA",
+                    "isFullMember": true,
+                    "imageId": 776287
+                  },
+                  "venueInfo": {
+                    "ground": "Sky Stadium",
+                    "city": "Wellington",
+                    "country": "New Zealand",
+                    "timezone": "+13:00"
+                  }
+                }
+              ],
+              "seriesId": 10234,
+              "seriesCategory": "International"
+            }
+          ],
+          "longDate": "1774137600000"
+        }
+      },
+      {
+        "scheduleAdWrapper": {
+          "date": "TUE, MAR 24 2026",
+          "matchScheduleList": [
+            {
+              "seriesName": "ICC Men's T20 World Cup Africa Sub Regional Qualifier B, 2026",
+              "matchInfo": [
+                {
+                  "matchId": 148166,
+                  "seriesId": 11627,
+                  "matchDesc": "1st Match",
+                  "matchFormat": "T20",
+                  "startDate": "1774344600000",
+                  "endDate": "1774396799000",
+                  "team1": {
+                    "teamId": 535,
+                    "teamName": "Tanzania",
+                    "teamSName": "TAN",
+                    "imageId": 172586
+                  },
+                  "team2": {
+                    "teamId": 553,
+                    "teamName": "Malawi",
+                    "teamSName": "MWI",
+                    "imageId": 172605
+                  },
+                  "venueInfo": {
+                    "ground": "Achimota Senior Secondary School A Field",
+                    "city": "Accra",
+                    "country": "Ghana",
+                    "timezone": "+00:00"
+                  }
+                },
+                {
+                  "matchId": 148177,
+                  "seriesId": 11627,
+                  "matchDesc": "2nd Match",
+                  "matchFormat": "T20",
+                  "startDate": "1774360200000",
+                  "endDate": "1774396799000",
+                  "team1": {
+                    "teamId": 1284,
+                    "teamName": "Eswatini",
+                    "teamSName": "SWT",
+                    "imageId": 248525
+                  },
+                  "team2": {
+                    "teamId": 562,
+                    "teamName": "Saint Helena",
+                    "teamSName": "SHN",
+                    "imageId": 172614
+                  },
+                  "venueInfo": {
+                    "ground": "Achimota Senior Secondary School A Field",
+                    "city": "Accra",
+                    "country": "Ghana",
+                    "timezone": "+00:00"
+                  }
+                },
+                {
+                  "matchId": 148188,
+                  "seriesId": 11627,
+                  "matchDesc": "3rd Match",
+                  "matchFormat": "T20",
+                  "startDate": "1774360200000",
+                  "endDate": "1774396799000",
+                  "team1": {
+                    "teamId": 531,
+                    "teamName": "Ghana",
+                    "teamSName": "GH",
+                    "imageId": 172581
+                  },
+                  "team2": {
+                    "teamId": 1277,
+                    "teamName": "Seychelles",
+                    "teamSName": "SEY",
+                    "imageId": 248523
+                  },
+                  "venueInfo": {
+                    "ground": "Achimota Senior Secondary School B Field",
+                    "city": "Accra",
+                    "country": "Ghana",
+                    "timezone": "+00:00"
+                  }
+                }
+              ],
+              "seriesId": 11627,
+              "seriesCategory": "International"
+            }
+          ],
+          "longDate": "1774310400000"
+        }
+      },
+      {
+        "scheduleAdWrapper": {
+          "date": "WED, MAR 25 2026",
+          "matchScheduleList": [
+            {
+              "seriesName": "South Africa tour of New Zealand, 2026",
+              "matchInfo": [
+                {
+                  "matchId": 122731,
+                  "seriesId": 10234,
+                  "matchDesc": "5th T20I",
+                  "matchFormat": "T20",
+                  "startDate": "1774419300000",
+                  "endDate": "1774483199000",
+                  "team1": {
+                    "teamId": 13,
+                    "teamName": "New Zealand",
+                    "teamSName": "NZ",
+                    "isFullMember": true,
+                    "imageId": 776333
+                  },
+                  "team2": {
+                    "teamId": 11,
+                    "teamName": "South Africa",
+                    "teamSName": "RSA",
+                    "isFullMember": true,
+                    "imageId": 776287
+                  },
+                  "venueInfo": {
+                    "ground": "Hagley Oval",
+                    "city": "Christchurch",
+                    "country": "New Zealand",
+                    "timezone": "+13:00"
+                  }
+                }
+              ],
+              "seriesId": 10234,
+              "seriesCategory": "International"
+            },
+            {
+              "seriesName": "ICC Men's T20 World Cup Africa Sub Regional Qualifier B, 2026",
+              "matchInfo": [
+                {
+                  "matchId": 148199,
+                  "seriesId": 11627,
+                  "matchDesc": "4th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1774431000000",
+                  "endDate": "1774483199000",
+                  "team1": {
+                    "teamId": 562,
+                    "teamName": "Saint Helena",
+                    "teamSName": "SHN",
+                    "imageId": 172614
+                  },
+                  "team2": {
+                    "teamId": 1277,
+                    "teamName": "Seychelles",
+                    "teamSName": "SEY",
+                    "imageId": 248523
+                  },
+                  "venueInfo": {
+                    "ground": "Achimota Senior Secondary School A Field",
+                    "city": "Accra",
+                    "country": "Ghana",
+                    "timezone": "+00:00"
+                  }
+                },
+                {
+                  "matchId": 148210,
+                  "seriesId": 11627,
+                  "matchDesc": "5th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1774431000000",
+                  "endDate": "1774483199000",
+                  "team1": {
+                    "teamId": 1284,
+                    "teamName": "Eswatini",
+                    "teamSName": "SWT",
+                    "imageId": 248525
+                  },
+                  "team2": {
+                    "teamId": 535,
+                    "teamName": "Tanzania",
+                    "teamSName": "TAN",
+                    "imageId": 172586
+                  },
+                  "venueInfo": {
+                    "ground": "Achimota Senior Secondary School B Field",
+                    "city": "Accra",
+                    "country": "Ghana",
+                    "timezone": "+00:00"
+                  }
+                },
+                {
+                  "matchId": 148221,
+                  "seriesId": 11627,
+                  "matchDesc": "6th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1774446600000",
+                  "endDate": "1774483199000",
+                  "team1": {
+                    "teamId": 553,
+                    "teamName": "Malawi",
+                    "teamSName": "MWI",
+                    "imageId": 172605
+                  },
+                  "team2": {
+                    "teamId": 531,
+                    "teamName": "Ghana",
+                    "teamSName": "GH",
+                    "imageId": 172581
+                  },
+                  "venueInfo": {
+                    "ground": "Achimota Senior Secondary School A Field",
+                    "city": "Accra",
+                    "country": "Ghana",
+                    "timezone": "+00:00"
+                  }
+                }
+              ],
+              "seriesId": 11627,
+              "seriesCategory": "International"
+            }
+          ],
+          "longDate": "1774396800000"
+        }
+      },
+      {
+        "scheduleAdWrapper": {
+          "date": "FRI, MAR 27 2026",
+          "matchScheduleList": [
+            {
+              "seriesName": "ICC Men's T20 World Cup Africa Sub Regional Qualifier B, 2026",
+              "matchInfo": [
+                {
+                  "matchId": 148236,
+                  "seriesId": 11627,
+                  "matchDesc": "8th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1774603800000",
+                  "endDate": "1774655999000",
+                  "team1": {
+                    "teamId": 553,
+                    "teamName": "Malawi",
+                    "teamSName": "MWI",
+                    "imageId": 172605
+                  },
+                  "team2": {
+                    "teamId": 1284,
+                    "teamName": "Eswatini",
+                    "teamSName": "SWT",
+                    "imageId": 248525
+                  },
+                  "venueInfo": {
+                    "ground": "Achimota Senior Secondary School B Field",
+                    "city": "Accra",
+                    "country": "Ghana",
+                    "timezone": "+00:00"
+                  }
+                },
+                {
+                  "matchId": 148225,
+                  "seriesId": 11627,
+                  "matchDesc": "7th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1774603800000",
+                  "endDate": "1774655999000",
+                  "team1": {
+                    "teamId": 531,
+                    "teamName": "Ghana",
+                    "teamSName": "GH",
+                    "imageId": 172581
+                  },
+                  "team2": {
+                    "teamId": 562,
+                    "teamName": "Saint Helena",
+                    "teamSName": "SHN",
+                    "imageId": 172614
+                  },
+                  "venueInfo": {
+                    "ground": "Achimota Senior Secondary School A Field",
+                    "city": "Accra",
+                    "country": "Ghana",
+                    "timezone": "+00:00"
+                  }
+                },
+                {
+                  "matchId": 148243,
+                  "seriesId": 11627,
+                  "matchDesc": "9th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1774619400000",
+                  "endDate": "1774655999000",
+                  "team1": {
+                    "teamId": 1277,
+                    "teamName": "Seychelles",
+                    "teamSName": "SEY",
+                    "imageId": 248523
+                  },
+                  "team2": {
+                    "teamId": 535,
+                    "teamName": "Tanzania",
+                    "teamSName": "TAN",
+                    "imageId": 172586
+                  },
+                  "venueInfo": {
+                    "ground": "Achimota Senior Secondary School B Field",
+                    "city": "Accra",
+                    "country": "Ghana",
+                    "timezone": "+00:00"
+                  }
+                }
+              ],
+              "seriesId": 11627,
+              "seriesCategory": "International"
+            }
+          ],
+          "longDate": "1774569600000"
+        }
+      }
+    ]
+  }
+}

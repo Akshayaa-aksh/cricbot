@@ -1,0 +1,223 @@
+{
+  "status": "success",
+  "response": {
+    "schedules": [
+      {
+        "scheduleAdWrapper": {
+          "date": "THU, MAR 19 2026",
+          "matchScheduleList": [
+            {
+              "seriesName": "Legends League Cricket 2026",
+              "matchInfo": [
+                {
+                  "matchId": 148613,
+                  "seriesId": 11671,
+                  "matchDesc": "9th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1773928800000",
+                  "endDate": "1773964799000",
+                  "team1": {
+                    "teamId": 3160,
+                    "teamName": "Mumbai Spartans",
+                    "teamSName": "MS",
+                    "imageId": 880422
+                  },
+                  "team2": {
+                    "teamId": 3171,
+                    "teamName": "Royal Riders Punjab",
+                    "teamSName": "RRP",
+                    "imageId": 880414
+                  },
+                  "venueInfo": {
+                    "ground": "Indira Gandhi International Cricket Stadium",
+                    "city": "Haldwani",
+                    "country": "India",
+                    "timezone": "+05:30"
+                  }
+                }
+              ],
+              "seriesId": 11671,
+              "seriesCategory": "League"
+            }
+          ],
+          "longDate": "1773878400000"
+        }
+      },
+      {
+        "scheduleAdWrapper": {
+          "date": "FRI, MAR 20 2026",
+          "matchScheduleList": [
+            {
+              "seriesName": "Legends League Cricket 2026",
+              "matchInfo": [
+                {
+                  "matchId": 148624,
+                  "seriesId": 11671,
+                  "matchDesc": "10th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1774015200000",
+                  "endDate": "1774051199000",
+                  "team1": {
+                    "teamId": 2156,
+                    "teamName": "Konark Suryas Odisha",
+                    "teamSName": "KNSO",
+                    "imageId": 880449
+                  },
+                  "team2": {
+                    "teamId": 3153,
+                    "teamName": "India Tigers",
+                    "teamSName": "INDT",
+                    "imageId": 880409
+                  },
+                  "venueInfo": {
+                    "ground": "Indira Gandhi International Cricket Stadium",
+                    "city": "Haldwani",
+                    "country": "India",
+                    "timezone": "+05:30"
+                  }
+                }
+              ],
+              "seriesId": 11671,
+              "seriesCategory": "League"
+            }
+          ],
+          "longDate": "1773964800000"
+        }
+      },
+      {
+        "scheduleAdWrapper": {
+          "date": "SAT, MAR 21 2026",
+          "matchScheduleList": [
+            {
+              "seriesName": "Legends League Cricket 2026",
+              "matchInfo": [
+                {
+                  "matchId": 148635,
+                  "seriesId": 11671,
+                  "matchDesc": "11th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1774083600000",
+                  "endDate": "1774137599000",
+                  "team1": {
+                    "teamId": 3182,
+                    "teamName": "India Captains",
+                    "teamSName": "INDCAP",
+                    "imageId": 880413
+                  },
+                  "team2": {
+                    "teamId": 3171,
+                    "teamName": "Royal Riders Punjab",
+                    "teamSName": "RRP",
+                    "imageId": 880414
+                  },
+                  "venueInfo": {
+                    "ground": "Rajiv Gandhi International Cricket Stadium",
+                    "city": "Dehradun",
+                    "country": "India",
+                    "timezone": "+05:30"
+                  }
+                },
+                {
+                  "matchId": 148646,
+                  "seriesId": 11671,
+                  "matchDesc": "12h Match",
+                  "matchFormat": "T20",
+                  "startDate": "1774101600000",
+                  "endDate": "1774137599000",
+                  "team1": {
+                    "teamId": 2156,
+                    "teamName": "Konark Suryas Odisha",
+                    "teamSName": "KNSO",
+                    "imageId": 880449
+                  },
+                  "team2": {
+                    "teamId": 1846,
+                    "teamName": "Southern Super Stars",
+                    "teamSName": "SNSS",
+                    "imageId": 880448
+                  },
+                  "venueInfo": {
+                    "ground": "Rajiv Gandhi International Cricket Stadium",
+                    "city": "Dehradun",
+                    "country": "India",
+                    "timezone": "+05:30"
+                  }
+                }
+              ],
+              "seriesId": 11671,
+              "seriesCategory": "League"
+            }
+          ],
+          "longDate": "1774051200000"
+        }
+      },
+      {
+        "scheduleAdWrapper": {
+          "date": "SUN, MAR 22 2026",
+          "matchScheduleList": [
+            {
+              "seriesName": "Legends League Cricket 2026",
+              "matchInfo": [
+                {
+                  "matchId": 150161,
+                  "seriesId": 11671,
+                  "matchDesc": "13th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1774170000000",
+                  "endDate": "1774223999000",
+                  "team1": {
+                    "teamId": 3160,
+                    "teamName": "Mumbai Spartans",
+                    "teamSName": "MS",
+                    "imageId": 880422
+                  },
+                  "team2": {
+                    "teamId": 2156,
+                    "teamName": "Konark Suryas Odisha",
+                    "teamSName": "KNSO",
+                    "imageId": 880449
+                  },
+                  "venueInfo": {
+                    "ground": "Rajiv Gandhi International Cricket Stadium",
+                    "city": "Dehradun",
+                    "country": "India",
+                    "timezone": "+05:30"
+                  }
+                },
+                {
+                  "matchId": 148657,
+                  "seriesId": 11671,
+                  "matchDesc": "14th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1774188000000",
+                  "endDate": "1774223999000",
+                  "team1": {
+                    "teamId": 1846,
+                    "teamName": "Southern Super Stars",
+                    "teamSName": "SNSS",
+                    "imageId": 880448
+                  },
+                  "team2": {
+                    "teamId": 3153,
+                    "teamName": "India Tigers",
+                    "teamSName": "INDT",
+                    "imageId": 880409
+                  },
+                  "venueInfo": {
+                    "ground": "Rajiv Gandhi International Cricket Stadium",
+                    "city": "Dehradun",
+                    "country": "India",
+                    "timezone": "+05:30"
+                  }
+                }
+              ],
+              "seriesId": 11671,
+              "seriesCategory": "League"
+            }
+          ],
+          "longDate": "1774137600000"
+        }
+      }
+    ]
+  }
+}

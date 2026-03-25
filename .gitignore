@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual env
+venv/
+.env
+
+# API keys / secrets
+.env
+config.py
+
+# Database files
+db/
+*.sqlite3
+
+# OS files
+.DS_Store
+Thumbs.db

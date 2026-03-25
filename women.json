@@ -1,0 +1,248 @@
+{
+  "status": "success",
+  "response": {
+    "schedules": [
+      {
+        "scheduleAdWrapper": {
+          "date": "SAT, MAR 21 2026",
+          "matchScheduleList": [
+            {
+              "seriesName": "Nigeria Invitational Women's T20I Tournament, 2026",
+              "matchInfo": [
+                {
+                  "matchId": 148775,
+                  "seriesId": 11693,
+                  "matchDesc": "3rd Match",
+                  "matchFormat": "T20",
+                  "startDate": "1774083600000",
+                  "endDate": "1774137599000",
+                  "team1": {
+                    "teamId": 1489,
+                    "teamName": "Ghana Women",
+                    "teamSName": "GHW",
+                    "imageId": 273958
+                  },
+                  "team2": {
+                    "teamId": 1354,
+                    "teamName": "South Africa Women U19",
+                    "teamSName": "RSAWU19",
+                    "imageId": 776299
+                  },
+                  "venueInfo": {
+                    "ground": "Tafawa Balewa Square Cricket Oval",
+                    "city": "Lagos",
+                    "country": "Nigeria",
+                    "timezone": "+01:00"
+                  }
+                },
+                {
+                  "matchId": 148786,
+                  "seriesId": 11693,
+                  "matchDesc": "4th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1774098000000",
+                  "endDate": "1774137599000",
+                  "team1": {
+                    "teamId": 720,
+                    "teamName": "Rwanda Women",
+                    "teamSName": "RWAW",
+                    "imageId": 248448
+                  },
+                  "team2": {
+                    "teamId": 1403,
+                    "teamName": "Zimbabwe Women U19",
+                    "teamSName": "ZIMWU19",
+                    "imageId": 776218
+                  },
+                  "venueInfo": {
+                    "ground": "Tafawa Balewa Square Cricket Oval",
+                    "city": "Lagos",
+                    "country": "Nigeria",
+                    "timezone": "+01:00"
+                  }
+                }
+              ],
+              "seriesId": 11693,
+              "seriesCategory": "Women"
+            }
+          ],
+          "longDate": "1774051200000"
+        }
+      },
+      {
+        "scheduleAdWrapper": {
+          "date": "SUN, MAR 22 2026",
+          "matchScheduleList": [
+            {
+              "seriesName": "Australia Women tour of West Indies, 2026",
+              "matchInfo": [
+                {
+                  "matchId": 148342,
+                  "seriesId": 11634,
+                  "matchDesc": "2nd T20I",
+                  "matchFormat": "T20",
+                  "startDate": "1774132200000",
+                  "endDate": "1774137599000",
+                  "team1": {
+                    "teamId": 257,
+                    "teamName": "West Indies Women",
+                    "teamSName": "WIW",
+                    "imageId": 776194
+                  },
+                  "team2": {
+                    "teamId": 100,
+                    "teamName": "Australia Women",
+                    "teamSName": "AUSW",
+                    "imageId": 776205
+                  },
+                  "venueInfo": {
+                    "ground": "Arnos Vale Ground",
+                    "city": "Kingstown, St Vincent",
+                    "country": "West Indies",
+                    "timezone": "-04:00"
+                  }
+                }
+              ],
+              "seriesId": 11634,
+              "seriesCategory": "Women"
+            },
+            {
+              "seriesName": "South Africa Women tour of New Zealand, 2026",
+              "matchInfo": [
+                {
+                  "matchId": 122819,
+                  "seriesId": 10251,
+                  "matchDesc": "4th T20I",
+                  "matchFormat": "T20",
+                  "startDate": "1774143900000",
+                  "endDate": "1774223999000",
+                  "team1": {
+                    "teamId": 98,
+                    "teamName": "New Zealand Women",
+                    "teamSName": "NZW",
+                    "imageId": 776338
+                  },
+                  "team2": {
+                    "teamId": 260,
+                    "teamName": "South Africa Women",
+                    "teamSName": "RSAW",
+                    "imageId": 776293
+                  },
+                  "venueInfo": {
+                    "ground": "Sky Stadium",
+                    "city": "Wellington",
+                    "country": "New Zealand",
+                    "timezone": "+13:00"
+                  }
+                }
+              ],
+              "seriesId": 10251,
+              "seriesCategory": "Women"
+            },
+            {
+              "seriesName": "Nigeria Invitational Women's T20I Tournament, 2026",
+              "matchInfo": [
+                {
+                  "matchId": 148797,
+                  "seriesId": 11693,
+                  "matchDesc": "5th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1774170000000",
+                  "endDate": "1774223999000",
+                  "team1": {
+                    "teamId": 1482,
+                    "teamName": "Nigeria Women",
+                    "teamSName": "NGAW",
+                    "imageId": 273957
+                  },
+                  "team2": {
+                    "teamId": 1489,
+                    "teamName": "Ghana Women",
+                    "teamSName": "GHW",
+                    "imageId": 273958
+                  },
+                  "venueInfo": {
+                    "ground": "Tafawa Balewa Square Cricket Oval",
+                    "city": "Lagos",
+                    "country": "Nigeria",
+                    "timezone": "+01:00"
+                  }
+                },
+                {
+                  "matchId": 148808,
+                  "seriesId": 11693,
+                  "matchDesc": "6th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1774184400000",
+                  "endDate": "1774223999000",
+                  "team1": {
+                    "teamId": 720,
+                    "teamName": "Rwanda Women",
+                    "teamSName": "RWAW",
+                    "imageId": 248448
+                  },
+                  "team2": {
+                    "teamId": 1354,
+                    "teamName": "South Africa Women U19",
+                    "teamSName": "RSAWU19",
+                    "imageId": 776299
+                  },
+                  "venueInfo": {
+                    "ground": "Tafawa Balewa Square Cricket Oval",
+                    "city": "Lagos",
+                    "country": "Nigeria",
+                    "timezone": "+01:00"
+                  }
+                }
+              ],
+              "seriesId": 11693,
+              "seriesCategory": "Women"
+            }
+          ],
+          "longDate": "1774137600000"
+        }
+      },
+      {
+        "scheduleAdWrapper": {
+          "date": "TUE, MAR 24 2026",
+          "matchScheduleList": [
+            {
+              "seriesName": "Australia Women tour of West Indies, 2026",
+              "matchInfo": [
+                {
+                  "matchId": 148353,
+                  "seriesId": 11634,
+                  "matchDesc": "3rd T20I",
+                  "matchFormat": "T20",
+                  "startDate": "1774305000000",
+                  "endDate": "1774310399000",
+                  "team1": {
+                    "teamId": 257,
+                    "teamName": "West Indies Women",
+                    "teamSName": "WIW",
+                    "imageId": 776194
+                  },
+                  "team2": {
+                    "teamId": 100,
+                    "teamName": "Australia Women",
+                    "teamSName": "AUSW",
+                    "imageId": 776205
+                  },
+                  "venueInfo": {
+                    "ground": "Arnos Vale Ground",
+                    "city": "Kingstown, St Vincent",
+                    "country": "West Indies",
+                    "timezone": "-04:00"
+                  }
+                }
+              ],
+              "seriesId": 11634,
+              "seriesCategory": "Women"
+            }
+          ],
+          "longDate": "1774310400000"
+        }
+      }
+    ]
+  }
+}
