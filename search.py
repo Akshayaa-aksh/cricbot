@@ -11,6 +11,7 @@ from pinecone import Pinecone
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_groq import ChatGroq
 from langchain_core.prompts import PromptTemplate
+from sentence_transformers import CrossEncoder          # ✅ NEW: for re-ranking
 from dotenv import load_dotenv
 
 from live_cricket import (
@@ -30,6 +31,17 @@ try:
     embedder = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2", model_kwargs={'local_files_only': True})
 except Exception:
     embedder = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+
+# ======= Cross-Encoder Re-Ranker =======
+# This model scores (query, passage) pairs directly — much more accurate than
+# bi-encoder cosine similarity alone.
+print("⏳ Loading Cross-Encoder Re-Ranker...")
+try:
+    reranker = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2", max_length=512)
+    print("✅ Re-Ranker loaded!")
+except Exception as e:
+    reranker = None
+    print(f"⚠️  Re-Ranker failed to load (will skip re-ranking): {e}")
 
 # ======= Pinecone Setup =======
 print("⏳ Connecting to Pinecone...")
@@ -157,10 +169,79 @@ def embed_text(text):
     return embedder.embed_query(text)
 
 
-def pinecone_search(query, top_k=5):
+def pinecone_search(query, top_k=10):
+    """
+    Fetch more candidates from Pinecone (top_k=10 by default) so the
+    re-ranker has a larger pool to pick the best ones from.
+    """
     vector  = embed_text(query)
     results = index.query(vector=vector, top_k=top_k, include_metadata=True)
     return results.get("matches", [])
+
+
+# ======= ✅ RE-RANKING FUNCTION =======
+def rerank_results(query, matches, top_n=5, min_score_threshold=0.0):
+    """
+    Re-rank Pinecone matches using a Cross-Encoder model.
+
+    How it works:
+      - Pinecone returns results ranked by bi-encoder cosine similarity.
+        Bi-encoders are fast but less accurate because query and passage
+        are encoded independently.
+      - A Cross-Encoder reads the (query + passage) TOGETHER, giving a
+        much more precise relevance score.
+      - We score every candidate, sort by cross-encoder score, and keep
+        only the top_n most relevant ones above the threshold.
+
+    Args:
+        query           : The user's original question.
+        matches         : Raw list of Pinecone match dicts.
+        top_n           : How many results to keep after re-ranking.
+        min_score_threshold : Drop results below this cross-encoder score.
+
+    Returns:
+        List of dicts: [{"text": ..., "pinecone_score": ..., "rerank_score": ...}, ...]
+    """
+    if not reranker:
+        # Fallback: just use Pinecone scores if re-ranker isn't available
+        fallback = []
+        for r in matches:
+            text = r.get("metadata", {}).get("text", "")
+            if text and r.get("score", 0) > 0.3:
+                fallback.append({
+                    "text":           text,
+                    "pinecone_score": r.get("score", 0),
+                    "rerank_score":   r.get("score", 0),   # same as pinecone score
+                })
+        return fallback[:top_n]
+
+    # Build (query, passage) pairs for the cross-encoder
+    candidates = []
+    for r in matches:
+        text = r.get("metadata", {}).get("text", "")
+        if text:
+            candidates.append({
+                "text":           text,
+                "pinecone_score": r.get("score", 0),
+            })
+
+    if not candidates:
+        return []
+
+    # Score all candidates with the cross-encoder in one batch (efficient)
+    pairs         = [(query, c["text"]) for c in candidates]
+    rerank_scores = reranker.predict(pairs)          # returns a list of floats
+
+    # Attach rerank scores to each candidate
+    for i, score in enumerate(rerank_scores):
+        candidates[i]["rerank_score"] = float(score)
+
+    # Sort by cross-encoder score (highest = most relevant)
+    candidates.sort(key=lambda x: x["rerank_score"], reverse=True)
+
+    # Filter by threshold and keep top_n
+    filtered = [c for c in candidates if c["rerank_score"] >= min_score_threshold]
+    return filtered[:top_n]
 
 
 def get_player_by_name(name):
@@ -210,7 +291,6 @@ def display_matches(matches):
 
 
 # STRICT predefined answers — exact match only
-# These only trigger if the user types EXACTLY this phrase
 def get_predefined_answer(query):
     answers = {
         "what is cricket":       "Cricket is a bat-and-ball sport played between two teams of 11 players. It's the second most popular sport in the world!",
@@ -223,7 +303,6 @@ def get_predefined_answer(query):
         "how many overs in t20": "A T20 match has 20 overs per innings — each team bats once for a maximum of 20 overs.",
         "how many overs in odi": "An ODI (One Day International) has 50 overs per innings for each team.",
     }
-    # Exact match only — prevents "ipl 2026 schedule" from matching "ipl"
     for key, value in answers.items():
         if query.strip() == key:
             return value
@@ -233,7 +312,7 @@ def get_predefined_answer(query):
 # ======= Main Chat Loop =======
 print("\n" + "🏏" * 30)
 print("   🤖 CricBot is Ready! Ask me anything about cricket!")
-print("   (Powered by Cricbuzz Live + Pinecone + Groq)")
+print("   (Powered by Cricbuzz Live + Pinecone + Cross-Encoder Re-Ranking + Groq)")
 print("🏏" * 30)
 print("   Type 'exit' or 'quit' to leave\n")
 
@@ -253,7 +332,7 @@ while True:
     cleaned = clean_query(user_input)
     context_parts = []
 
-    # ── 1. Live intent detection → Cricbuzz API (CHECKED FIRST) ─
+    # ── 1. Live intent detection → Cricbuzz API (CHECKED FIRST) ─────────
     live_intent = detect_live_intent(user_input)
     if live_intent:
         live_data = fetch_live_context(live_intent)
@@ -261,14 +340,14 @@ while True:
             print(f"\n{live_data}\n")
             context_parts.append(f"Live data from Cricbuzz API:\n{live_data}")
 
-    # ── 2. Predefined answers (only if NO live intent detected) ──
+    # ── 2. Predefined answers (only if NO live intent detected) ──────────
     if not live_intent:
         predefined = get_predefined_answer(cleaned)
         if predefined:
             print(f"\n🤖 CricBot: {predefined}\n")
             continue
 
-    # ── 3. Local player name lookup ─────────────────────────────
+    # ── 3. Local player name lookup ──────────────────────────────────────
     player = get_player_by_name(cleaned)
     if player:
         display_player_info(player)
@@ -278,7 +357,7 @@ while True:
             player_ctx += f"\nLive profile: {live_player['summary']}"
         context_parts.append(f"Player info:\n{player_ctx}")
 
-    # ── 4. Local match schedule lookup ──────────────────────────
+    # ── 4. Local match schedule lookup ───────────────────────────────────
     matches = find_matches_for_query(cleaned)
     if matches:
         display_matches(matches)
@@ -288,21 +367,29 @@ while True:
         )
         context_parts.append(f"Match schedules (local DB):\n{match_ctx}")
 
-    # ── 5. Pinecone semantic search ─────────────────────────────
-    print("🔍 Searching Pinecone...")
-    pine_results = pinecone_search(user_input, top_k=5)
-    pine_parts   = []
-    for r in pine_results:
-        meta  = r.get("metadata", {})
-        score = r.get("score", 0)
-        text  = meta.get("text", "")
-        if text and score > 0.3:
-            pine_parts.append(f"- {text} (relevance: {score:.2f})")
-    if pine_parts:
-        print(f"✅ Found {len(pine_parts)} relevant results from Pinecone")
-        context_parts.append("Pinecone results:\n" + "\n".join(pine_parts))
+    # ── 5. Pinecone search → Cross-Encoder Re-Ranking ────────────────────
+    print("🔍 Searching Pinecone (fetching 10 candidates for re-ranking)...")
+    raw_matches    = pinecone_search(user_input, top_k=10)   # fetch more candidates
+    reranked       = rerank_results(user_input, raw_matches, top_n=5, min_score_threshold=0.0)
 
-    # ── 6. Call Groq LLM with all combined context ───────────────
+    if reranked:
+        print(f"✅ Re-ranked to top {len(reranked)} results")
+        print(f"\n{'─'*60}")
+        print("📊 Re-Ranked Results (Cross-Encoder Scores):")
+        pine_parts = []
+        for i, r in enumerate(reranked, 1):
+            print(f"  {i}. [Pinecone: {r['pinecone_score']:.3f} → Rerank: {r['rerank_score']:.3f}] "
+                  f"{r['text'][:80]}...")
+            pine_parts.append(
+                f"- {r['text']} "
+                f"(pinecone_score: {r['pinecone_score']:.2f}, rerank_score: {r['rerank_score']:.2f})"
+            )
+        print(f"{'─'*60}\n")
+        context_parts.append("Re-ranked Pinecone results:\n" + "\n".join(pine_parts))
+    else:
+        print("⚠️  No relevant results found in Pinecone after re-ranking.")
+
+    # ── 6. Call Groq LLM with all combined context ───────────────────────
     full_context = "\n\n".join(context_parts) if context_parts else "No specific data found."
 
     print("🤖 CricBot: ", end="", flush=True)
